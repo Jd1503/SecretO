@@ -139,8 +139,10 @@ app.get("/secrets", function (req, res) {
  
 app.get("/submit", function (req, res) {
   if (req.isAuthenticated()) {
+    console.log(req.isAuthenticated()+" "+"hi")
     res.render("submit");
   } else {
+    console.log(req.isAuthenticated())
     res.redirect("/login");
   }
 });
