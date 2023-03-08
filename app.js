@@ -1,5 +1,4 @@
 require("dotenv").config();
- 
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -29,6 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
  
 // mongoose.connect("mongodb://127.0.0.1:27017/userDB", { useNewUrlParser: true });
+mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONGO_CONNECT_URI, { useNewUrlParser: true });
 
  
